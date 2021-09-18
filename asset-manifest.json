@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/root-z.github.io/static-app/static/css/main.a617e044.chunk.css",
+    "main.js": "/root-z.github.io/static-app/static/js/main.a016a5f9.chunk.js",
+    "main.js.map": "/root-z.github.io/static-app/static/js/main.a016a5f9.chunk.js.map",
+    "runtime-main.js": "/root-z.github.io/static-app/static/js/runtime-main.4b8b1496.js",
+    "runtime-main.js.map": "/root-z.github.io/static-app/static/js/runtime-main.4b8b1496.js.map",
+    "static/js/2.41208968.chunk.js": "/root-z.github.io/static-app/static/js/2.41208968.chunk.js",
+    "static/js/2.41208968.chunk.js.map": "/root-z.github.io/static-app/static/js/2.41208968.chunk.js.map",
+    "static/js/3.5ac9fa0a.chunk.js": "/root-z.github.io/static-app/static/js/3.5ac9fa0a.chunk.js",
+    "static/js/3.5ac9fa0a.chunk.js.map": "/root-z.github.io/static-app/static/js/3.5ac9fa0a.chunk.js.map",
+    "index.html": "/root-z.github.io/static-app/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/root-z.github.io/static-app/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.41208968.chunk.js.LICENSE.txt": "/root-z.github.io/static-app/static/js/2.41208968.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/root-z.github.io/static-app/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.4b8b1496.js",
+    "static/js/2.41208968.chunk.js",
+    "static/css/main.a617e044.chunk.css",
+    "static/js/main.a016a5f9.chunk.js"
+  ]
+}
