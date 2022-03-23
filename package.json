@@ -2,7 +2,7 @@
   "name": "static-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "root-z.github.io/static-app",
+  "homepage": "https://root-z.github.io/static-app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
