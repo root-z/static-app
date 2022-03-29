@@ -128,4 +128,4 @@ function StartForm(props) {
     )
 }
 
-export {Board};
+export default Board;
