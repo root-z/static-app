@@ -33,11 +33,14 @@ class Board extends React.Component {
         }
     }
 
-    start = (length) => {
-        this.setState((prevState, pros) => ({
+    start = (length, pInfection, recoveryTime, immuneTime) => {
+        this.setState((prevState, props) => ({
             land: initialize(length),
             time: 0,
-            reset: false
+            reset: false,
+            pInfection: pInfection,
+            recoveryTime: recoveryTime,
+            immuneTime: immuneTime
         }))
     }
 
@@ -73,8 +76,15 @@ class Board extends React.Component {
 
     next = () => {
         this.setState((prevState, props) => ({
-            land: transition(prevState.land, prevState.time + 1),
-            time: prevState.time + 1
+            land: transition(prevState.land, 
+                prevState.time + 1, 
+                prevState.pInfection,
+                prevState.recoveryTime,
+                prevState.immuneTime),
+            time: prevState.time + 1,
+            pInfection: prevState.pInfection,
+            recoveryTime: prevState.recoveryTime,
+            immuneTime: prevState.immuneTime
         }))
     }
 
@@ -90,7 +100,7 @@ class Board extends React.Component {
                 <h1> Virus Simulator </h1>
                 {
                     this.state.reset
-                        ? <StartForm onSubmit={this.start} length={this.state.land.length} />
+                        ? <StartForm onSubmit={this.start} />
                         : this.grid()
                 }
             </div>
@@ -107,7 +117,7 @@ function StartForm(props) {
     const [immuneTime, setImmuneTime] = useState(7)
 
     function handleSubmit(event) {
-        props.onSubmit(parseInt(length))
+        props.onSubmit(parseInt(length), pInfection, recoveryTime, immuneTime)
         event.preventDefault()
     }
 
