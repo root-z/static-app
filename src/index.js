@@ -1,27 +1,25 @@
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import './index.css';
 import App from './App.js';
 import Board from './Board.js';
-import Welcome from './Welcome.js'
 
 
 ReactDOM.render(
-  <BrowserRouter>
+  <HashRouter basename='/'>
     <Routes>
-      <Route path="/" element={<App />}>
-        <Route path="static-app" element={<Welcome />} />
-        <Route path="static-app/virus-sim" element={<Board />} />
-        <Route
-          path="*"
-          element={
-            <main style={{ padding: "1rem" }}>
-              <p>There's nothing here!</p>
-            </main>
-          }
-        />
-      </Route>
+      <Route exact path="/" element={<App />}>
+        <Route path="/virus-sim" element={<Board />} />
+      </ Route>
+      <Route
+        path="*"
+        element={
+          <main style={{ padding: "1rem" }}>
+            <p>There's nothing here!</p>
+          </main>
+        }
+      />
     </Routes>
-  </BrowserRouter>,
+  </HashRouter>,
   document.getElementById('root')
 );
