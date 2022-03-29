@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import './index.css';
 import { initialize, transition, State } from './Land.js';
 
 class Cell extends React.Component {
-
     render() {
         let color
         switch (this.props.value.state) {
@@ -42,8 +42,8 @@ class Board extends React.Component {
         }))
     }
 
-    renderCell = (i) => {
-        return <Cell value={i} />;
+    renderCell = (cellState, i) => {
+        return <Cell key={`cell${i}`} value={cellState} />;
     }
 
     width = () => {
@@ -53,7 +53,7 @@ class Board extends React.Component {
     row = (row) => {
         const arr = Array(this.width())
         for (let i = 0; i < this.width(); i++) {
-            arr[i] = this.renderCell(this.state.land[row][i])
+            arr[i] = this.renderCell(this.state.land[row][i], i)
         }
         return arr
     }
@@ -61,10 +61,13 @@ class Board extends React.Component {
     grid = () => {
         const arr = Array(this.width())
         for (let i = 0; i < this.width(); i++) {
-            arr[i] = <div className="board-row">{this.row(i)}</div>
+            arr[i] = <div key={`row${i}`} className="board-row">{this.row(i)}</div>
         }
+        console.log(arr)
         return [
-            <div className="board">{arr}</div>,
+            <div className="board">
+            {arr}
+            </div>,
             <button onClick={this.next}>Next Step</button>,
             <button onClick={this.startReset}>Reset</button>
         ]
@@ -113,13 +116,13 @@ function StartForm(props) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label for="length">Side length: {length}</label> <br />
+                <label htmlFor="length">Side length: {length}</label> <br />
                 <input id="length" type="range" min="3" max="100" value={length} onInput={event => setLength(event.target.value)} /><br />
-                <label for="pInfection">Probability of infection from each neighbour: {pInfection}</label><br />
+                <label htmlFor="pInfection">Probability of infection from each neighbour: {pInfection}</label><br />
                 <input id="pInfection" type="range" min="0.1" max="1" step="0.01" value={pInfection} onInput={event => setPInfection(event.target.value)} /><br />
-                <label for="recoveryTime">Time it takes to recover from infection: {recoveryTime}</label><br />
+                <label htmlFor="recoveryTime">Time it takes to recover from infection: {recoveryTime}</label><br />
                 <input id="recoveryTime" type="range" min="0" max="100" value={recoveryTime} onInput={event => setRecoveryTime(event.target.value)} /><br />
-                <label for="immuneTime">Time being immune from infection after recovery: {immuneTime}</label><br />
+                <label htmlFor="immuneTime">Time being immune from infection after recovery: {immuneTime}</label><br />
                 <input id="immuneTime" type="range" min="0" max="100" value={immuneTime} onInput={event => setImmuneTime(event.target.value)} /><br />
                 <input type="submit" value="Start" />
             </form>
@@ -127,4 +130,4 @@ function StartForm(props) {
     )
 }
 
-export default Board;
+export {Board};

@@ -17,7 +17,7 @@ ol, ul {
   margin-bottom: 10px;
 }
 
-.square {
+.cell {
   display: inline-block;
   background: #fff;
   border: 1px solid #999;
@@ -34,7 +34,7 @@ ol, ul {
   width: 10px;
 }
 
-.square:focus {
+.cell:focus {
   outline: none;
 }
 

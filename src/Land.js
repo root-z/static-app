@@ -25,7 +25,6 @@ function buildSick(sickUntilTime) {
 }
 
 function initialize(length = 100, pop_density = 0.5, recoveryTime = 14) {
-  console.log('length ', length)
   let totalHealthy = 0
   const land = Array(length).fill(null).map(
     () => Array(length).fill(null).map(
