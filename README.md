@@ -2,6 +2,8 @@
 
 See [Deploying a React App* to GitHub Pages](https://github.com/gitname/react-gh-pages) for how this app is created.
 
+This setup maintains the deployable version in branch ```gh-pages```. Run ```npm run deploy``` to deploy the React app to github pages.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import './index.css';
 import { initialize, transition, State } from './Land.js';
 
 class Cell extends React.Component {
@@ -63,7 +62,6 @@ class Board extends React.Component {
         for (let i = 0; i < this.width(); i++) {
             arr[i] = <div key={`row${i}`} className="board-row">{this.row(i)}</div>
         }
-        console.log(arr)
         return [
             <div className="board">
             {arr}
