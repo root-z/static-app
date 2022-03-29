@@ -56,6 +56,7 @@ outerloop:
 }
 
 function transition(currState, currTime, pInfection = 0.5, recoveryTime = 14, immuneTime = 7) {
+  console.log(immuneTime)
   const nextState = Array(currState.length).fill(null).map(() => Array(currState[0].length).fill(null))
   for (let i = 0; i < currState.length; i++) {
     for (let j = 0; j < currState[i].length; j++) {

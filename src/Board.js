@@ -117,7 +117,7 @@ function StartForm(props) {
     const [immuneTime, setImmuneTime] = useState(7)
 
     function handleSubmit(event) {
-        props.onSubmit(parseInt(length), pInfection, recoveryTime, immuneTime)
+        props.onSubmit(parseInt(length), parseFloat(pInfection), parseInt(recoveryTime), parseInt(immuneTime))
         event.preventDefault()
     }
 
