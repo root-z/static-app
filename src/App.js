@@ -9,8 +9,8 @@ function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/static-app/virus-sim">Virus Simulator</Link> |{" "}
-        <Link to="/static-app/maze-gen">Maze Generator</Link>
+        <Link to="/virus-sim">Virus Simulator</Link> |{" "}
+        <Link to="/maze-gen">Maze Generator</Link>
       </nav>
       <Outlet />
     </div>
